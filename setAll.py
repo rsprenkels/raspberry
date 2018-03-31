@@ -38,12 +38,9 @@ clear()
  
 try:
     while True:
-        # BOOSTER_SETRAINBOW HUE (2 Bytes), SATURATION, VALUE, von der ersten (0) bis
-        # zur letzten LED in 10-er Schritten, BOOSTER_SHOW
-        # spi.writebytes([0xA7, i & 0xFF, i >> 8, 255, 100, 0, LED_COUNT - 1, 10, 0xB2])  
         clear()
         time.sleep(DELAY)
-        print(".")
+        print("32")
 except KeyboardInterrupt:
     clear()
     spi.close()
