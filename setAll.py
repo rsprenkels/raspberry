@@ -2,8 +2,8 @@
 import spidev
 import time
 
-DELAY = 0.04
-LED_COUNT = 2
+DELAY = 1.0
+LED_COUNT = 64
  
 spi = spidev.SpiDev()
  
@@ -23,7 +23,7 @@ def initLEDs():
  
 def clear():
     # BOOSTER_SETRGBW, BOOSTER_SETALL, BOOSTER_SHOW
-    spi.writebytes([0xA2, 255, 255, 255, 255])
+    spi.writebytes([0xA2, 10, 0, 10, 0])
     time.sleep(DELAY)
     spi.writebytes([0xA5])
     time.sleep(DELAY)
@@ -38,9 +38,15 @@ clear()
  
 try:
     while True:
-        clear()
+        i += 1
+        val = (i % 50) + 2
+        spi.writebytes([0xA2, val, 0, 0, 0])
+        # time.sleep(DELAY)
+        spi.writebytes([0xA5])
+        # time.sleep(DELAY)
+        spi.writebytes([0xB2])
         time.sleep(DELAY)
-        print("32")
+        print(val)
 except KeyboardInterrupt:
     clear()
     spi.close()
