@@ -1,3 +1,4 @@
+#!/usr/bin/env python3
 import RPi.GPIO as GPIO
 import time
 
@@ -22,6 +23,7 @@ def destroy():
     GPIO.cleanup()                  # Release resource
 
 if __name__ == '__main__':          # Program start from here
+    print(f"program blink is starting. Press Ctrl+C to quit")
     setup()
     try:
         blink()
