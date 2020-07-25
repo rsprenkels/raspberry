@@ -34,7 +34,7 @@ def left_fill(device):
 def mid_wipe(device):
     for repetitions in range(5):
         w, h = device.width, device.height
-        for bars in range(1, (w + 1) // 2 + 1):
+        for bars in range(0, (w + 1) // 2 + 1):
             with canvas(device) as draw:
                 for b in range(8 - bars, 8 + bars):
                     draw.line([(b, 0), (b, h)], fill="white", width=1)
