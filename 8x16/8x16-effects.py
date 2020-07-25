@@ -19,10 +19,18 @@ def demo(n, block_orientation, rotate, inreverse):
     serial = spi(port=0, device=0, gpio=noop())
     device = max7219(serial, cascaded=n or 1, block_orientation=block_orientation,
                      rotate=rotate or 0, blocks_arranged_in_reverse_order=inreverse)
-    print("Created device")
 
     effect_1(device)
+    mid_wipe(device)
 
+def mid_wipe(device):
+    for repetitions in range(5):
+        w, h = device.bounding_box[1]
+        for bars in range(1, w + 1):
+            with canvas(device) as draw:
+                for b in range(bars):
+                    draw.line([(b, 0), (b, h)], fill="white", width=1)
+            time.sleep(0.05)
 
 
 def effect_1(device):
