@@ -25,7 +25,7 @@ def demo(n, block_orientation, rotate, inreverse):
 
 def mid_wipe(device):
     for repetitions in range(5):
-        w, h = device.bounding_box[1]
+        w, h = device.width, device.height
         for bars in range(1, w + 1):
             with canvas(device) as draw:
                 for b in range(bars):
