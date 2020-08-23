@@ -8,7 +8,7 @@
 import re
 import time
 import argparse
-import random
+from random import random
 
 from luma.led_matrix.device import max7219
 from luma.core.interface.serial import spi, noop
@@ -34,7 +34,7 @@ def random_on_off(device):
         w, h = device.width, device.height
         points = {(x,y) for x in range(w) for y in range(h)}
         while points:
-            p = random.choice(points)
+            p = points.pop()
             points.remove(p)
             with canvas(device) as draw:
                 for d in points:
@@ -42,7 +42,7 @@ def random_on_off(device):
         points = {(x,y) for x in range(w) for y in range(h)}
         points2 = set()
         while points:
-            p = random.choice(points)
+            p = points.pop()
             points.remove(p)
             points2.add(p)
             with canvas(device) as draw:
