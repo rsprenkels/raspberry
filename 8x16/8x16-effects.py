@@ -24,7 +24,7 @@ def demo(n, block_orientation, rotate, inreverse):
 
     while True:
         mid_wipe(device)
-        left_fill(device)
+        # left_fill(device)
 
 def left_fill(device):
     for repetitions in range(5):
