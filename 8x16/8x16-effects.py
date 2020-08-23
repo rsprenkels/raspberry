@@ -20,7 +20,8 @@ def demo(n, block_orientation, rotate, inreverse):
     device = max7219(serial, cascaded=n or 1, block_orientation=block_orientation,
                      rotate=rotate or 0, blocks_arranged_in_reverse_order=inreverse)
 
-    mid_wipe(device)
+    while True:
+        mid_wipe(device)
 
 def left_fill(device):
     for repetitions in range(5):
@@ -61,7 +62,6 @@ if __name__ == "__main__":
     args = parser.parse_args()
 
     try:
-        while True:
-            demo(args.cascaded, args.block_orientation, args.rotate, args.reverse_order)
+        demo(args.cascaded, args.block_orientation, args.rotate, args.reverse_order)
     except KeyboardInterrupt:
         pass
