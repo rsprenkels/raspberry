@@ -3,7 +3,7 @@
 # Copyright (c) 2017-18 Richard Hull and contributors
 # See LICENSE.rst for details.
 
-# changed alot
+# changed a
 
 import re
 import time
