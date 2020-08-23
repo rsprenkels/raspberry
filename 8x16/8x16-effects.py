@@ -65,7 +65,7 @@ def mid_wipe(device):
             with canvas(device) as draw:
                 for b in range(8 - bars, 8 + bars):
                     draw.line([(b, 0), (b, h)], fill="white", width=1)
-            time.sleep(0.05)
+            time.sleep(0.08)
 
 
 def effect_1(device):
