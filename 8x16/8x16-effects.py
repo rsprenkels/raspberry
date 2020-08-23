@@ -31,8 +31,11 @@ def demo(n, block_orientation, rotate, inreverse):
 def random_on_off(device):
     for repetitions in range(5):
         w, h = device.width, device.height
-        with canvas(device) as draw:
-            draw.point(xy=(3,3), fill="white")
+        points = {(x,y) for x in range(w) for y in range(h)}
+        while points:
+            p = points.pop()
+            with canvas(device) as draw:
+                draw.point(xy=p, fill="white")
         time.sleep(0.05)
 
 
