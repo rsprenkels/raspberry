@@ -24,7 +24,17 @@ def demo(n, block_orientation, rotate, inreverse):
 
     while True:
         # mid_wipe(device)
-        left_fill(device)
+        # left_fill(device)
+        random_on_off(device)
+
+
+def random_on_off(device)
+    for repetitions in range(5):
+        w, h = device.width, device.height
+        with canvas(device) as draw:
+            draw.point(xy=(3,3), fill="white")
+        time.sleep(0.05)
+
 
 def left_fill(device):
     for repetitions in range(5):
