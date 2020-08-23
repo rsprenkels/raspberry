@@ -28,7 +28,7 @@ def demo(n, block_orientation, rotate, inreverse):
         random_on_off(device)
 
 
-def random_on_off(device)
+def random_on_off(device):
     for repetitions in range(5):
         w, h = device.width, device.height
         with canvas(device) as draw:
