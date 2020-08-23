@@ -42,7 +42,7 @@ def random_on_off(device):
             p = points.pop()
             with canvas(device) as draw:
                 for d in points:
-                    draw.point(xy=d, fill="black")
+                    draw.point(xy=d, fill="white")
         time.sleep(0.05)
 
 
