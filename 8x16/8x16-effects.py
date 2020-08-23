@@ -37,6 +37,12 @@ def random_on_off(device):
             with canvas(device) as draw:
                 for d in points:
                     draw.point(xy=d, fill="white")
+        points = {(x,y) for x in range(w) for y in range(h)}
+        while points:
+            p = points.pop()
+            with canvas(device) as draw:
+                for d in points:
+                    draw.point(xy=d, fill="black")
         time.sleep(0.05)
 
 
