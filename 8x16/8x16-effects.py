@@ -8,7 +8,7 @@
 import re
 import time
 import argparse
-from random import random
+import random
 
 from luma.led_matrix.device import max7219
 from luma.core.interface.serial import spi, noop
