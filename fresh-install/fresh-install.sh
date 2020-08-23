@@ -13,4 +13,14 @@ sudo apt-get -y install git
 mkdir git; cd git
 git clone git@github.com:rsprenkels/raspberry.git
 
-mkdir ent
+# get prerequiste for using venv
+sudo apt-get install python3-venv
+
+# create a venv and activate it
+python3 -m venv leds
+source leds/bin/activate
+sudo -H pip install --upgrade --ignore-installed pip setuptools
+
+# the lib and other stuff for led matrix
+sudo apt-get install python-dev python-pip
+pip install max7219
