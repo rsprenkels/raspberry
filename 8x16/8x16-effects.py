@@ -24,8 +24,8 @@ def demo(n, block_orientation, rotate, inreverse):
                      rotate=rotate or 0, blocks_arranged_in_reverse_order=inreverse)
 
     while True:
-        # mid_wipe(device)
-        # left_fill(device)
+        mid_wipe(device)
+        left_fill(device)
         random_on_off(device)
 
 
