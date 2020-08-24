@@ -39,11 +39,11 @@ def fill_borders(device):
                 draw.point(xy=(x, y), fill="white")
             time.sleep(0.10)
             x += dx
-            if x >= w or x == 0:
+            if x >= w or x == -1:
                 dx = -dx
                 x += (2 * dx)
             y += dy
-            if y >= h or y == 0:
+            if y >= h or y == -1:
                 dy = -dy
                 y += (2 * dy)
 
