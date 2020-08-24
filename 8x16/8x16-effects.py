@@ -41,9 +41,11 @@ def fill_borders(device):
             x += dx
             if x >= w or x == 0:
                 dx = -dx
+                x += (2 * dx)
             y += dy
             if y >= h or y == 0:
                 dy = -dy
+                y += (2 * dy)
 
 def random_on_off(device):
     for repetitions in range(5):
