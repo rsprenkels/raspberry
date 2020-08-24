@@ -24,10 +24,26 @@ def demo(n, block_orientation, rotate, inreverse):
                      rotate=rotate or 0, blocks_arranged_in_reverse_order=inreverse)
 
     while True:
-        mid_wipe(device)
-        left_fill(device)
-        random_on_off(device)
+        fill_borders(device)
+        # mid_wipe(device)
+        # left_fill(device)
+        # random_on_off(device)
 
+def fill_borders(device):
+    for repetitions in range(5):
+        w, h = device.width, device.height
+        x, y = 0, 0
+        dx, dy = 1, 1
+        for moves in range(1000):
+            with canvas(device) as draw:
+                draw.point(xy=(x, y), fill="white")
+            time.sleep(0.10)
+            x += dx
+            if x >= w or x == 0:
+                dx = -dx
+            y += dy
+            if y >= h or y == 0:
+                dy = -dy
 
 def random_on_off(device):
     for repetitions in range(5):
