@@ -32,7 +32,7 @@ def demo(n, block_orientation, rotate, inreverse):
 def fill_borders(device):
     for repetitions in range(5):
         w, h = device.width, device.height
-        x, y = 0, 0
+        x, y = 3, 0
         dx, dy = 1, 1
         for moves in range(1000):
             with canvas(device) as draw:
