@@ -46,7 +46,7 @@ def random_on_off(device):
             with canvas(device) as draw:
                 for d in points2:
                     draw.point(xy=d, fill="white")
-        time.sleep(0.05)
+        time.sleep(0.10)
 
 
 def left_fill(device):
