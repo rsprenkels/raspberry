@@ -37,7 +37,7 @@ def fill_borders(device):
         for moves in range(1000):
             with canvas(device) as draw:
                 draw.point(xy=(x, y), fill="white")
-            time.sleep(0.30)
+            time.sleep(0.01)
             x += dx
             if x >= w or x == -1:
                 dx = -dx
