@@ -35,7 +35,7 @@ def incremental(device):
     d = canvas(device)
     w, h = device.width, device.height
     for x in range(w):
-        with d as d:
+        with canvas(device) as d:
             d.point((x, 3))
         time.sleep(0.50)
 
