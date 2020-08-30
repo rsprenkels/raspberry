@@ -24,10 +24,20 @@ def demo(n, block_orientation, rotate, inreverse):
                      rotate=rotate or 0, blocks_arranged_in_reverse_order=inreverse)
 
     while True:
-        bouncing_ball(device)
+        incremental(device)
+        # bouncing_ball(device)
         # mid_wipe(device)
         # left_fill(device)
         # random_on_off(device)
+
+
+def incremental(device):
+    d = canvas(device)
+    w, h = device.width, device.height
+    for x in range(w):
+        with d as d:
+            d.point((x, 3))
+        time.sleep(0.50)
 
 def bouncing_ball(device):
     for repetitions in range(5):
