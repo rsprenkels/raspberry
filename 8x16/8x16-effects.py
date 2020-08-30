@@ -32,10 +32,10 @@ def demo(n, block_orientation, rotate, inreverse):
 
 
 def incremental(device):
-    d = canvas(device)
+    dev = canvas(device)
     w, h = device.width, device.height
     for x in range(w):
-        with canvas(device) as d:
+        with dev as d:
             d.point((x, 3), fill="white")
         time.sleep(0.20)
 
