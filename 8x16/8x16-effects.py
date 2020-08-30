@@ -37,7 +37,7 @@ def incremental(device):
     for x in range(w):
         with canvas(device) as d:
             d.point((x, 3), fill="white")
-        time.sleep(0.50)
+        time.sleep(0.20)
 
 def bouncing_ball(device):
     for repetitions in range(5):
