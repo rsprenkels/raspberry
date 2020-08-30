@@ -36,7 +36,7 @@ def incremental(device):
     w, h = device.width, device.height
     for x in range(w):
         with canvas(device) as d:
-            d.point((x, 3))
+            d.point((x, 3), fill="white")
         time.sleep(0.50)
 
 def bouncing_ball(device):
