@@ -24,12 +24,12 @@ def demo(n, block_orientation, rotate, inreverse):
                      rotate=rotate or 0, blocks_arranged_in_reverse_order=inreverse)
 
     while True:
-        fill_borders(device)
+        bouncing_ball(device)
         # mid_wipe(device)
         # left_fill(device)
         # random_on_off(device)
 
-def fill_borders(device):
+def bouncing_ball(device):
     for repetitions in range(5):
         w, h = device.width, device.height + 1
         x, y = 3, 0
