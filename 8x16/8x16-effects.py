@@ -21,14 +21,14 @@ def demo(n, block_orientation, rotate, inreverse):
     # create matrix device
     serial = spi(port=0, device=0, gpio=noop())
     device = max7219(serial, cascaded=n or 1, block_orientation=block_orientation,
-                     rotate=rotate or 0, blocks_arranged_in_reverse_order=inreverse)
+                     rotate=rotate or 0, blocks_arranged_in_reverse_order=inreverse, contrast=255)
 
     while True:
         incremental(device)
-        # bouncing_ball(device)
-        # mid_wipe(device)
-        # left_fill(device)
-        # random_on_off(device)
+        bouncing_ball(device)
+        mid_wipe(device)
+        left_fill(device)
+        random_on_off(device)
 
 
 def incremental(device):
@@ -44,7 +44,7 @@ def bouncing_ball(device):
         w, h = device.width, device.height + 1
         x, y = 3, 0
         dx, dy = 1, 1
-        for moves in range(1000):
+        for moves in range(100):
             with canvas(device) as draw:
                 draw.point(xy=(x, y), fill="white")
             time.sleep(0.01)
@@ -58,7 +58,7 @@ def bouncing_ball(device):
                 y += (2 * dy)
 
 def random_on_off(device):
-    for repetitions in range(5):
+    for repetitions in range(10):
         w, h = device.width, device.height
         points = {(x,y) for x in range(w) for y in range(h)}
         while points:
